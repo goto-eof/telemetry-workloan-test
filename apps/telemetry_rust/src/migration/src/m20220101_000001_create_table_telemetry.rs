@@ -9,20 +9,20 @@ impl MigrationTrait for Migration {
         manager
             .create_table(
                 Table::create()
-                    .table(Telemetry::Table)
+                    .table(TelemetryRust::Table)
                     .if_not_exists()
                     .col(
-                        ColumnDef::new(Telemetry::Id)
+                        ColumnDef::new(TelemetryRust::Id)
                             .integer()
                             .not_null()
                             .auto_increment()
                             .primary_key(),
                     )
-                    .col(ColumnDef::new(Telemetry::RequestId).integer().not_null())
-                    .col(ColumnDef::new(Telemetry::Code).string().not_null())
-                    .col(ColumnDef::new(Telemetry::Property).string().not_null())
-                    .col(ColumnDef::new(Telemetry::Value).string())
-                    .col(ColumnDef::new(Telemetry::CreatedAt).timestamp().not_null())
+                    .col(ColumnDef::new(TelemetryRust::RequestId).integer().not_null())
+                    .col(ColumnDef::new(TelemetryRust::Code).string().not_null())
+                    .col(ColumnDef::new(TelemetryRust::Property).string().not_null())
+                    .col(ColumnDef::new(TelemetryRust::Value).string())
+                    .col(ColumnDef::new(TelemetryRust::CreatedAt).timestamp().not_null())
                     .to_owned(),
             )
             .await
@@ -30,13 +30,13 @@ impl MigrationTrait for Migration {
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
         manager
-            .drop_table(Table::drop().table(Telemetry::Table).to_owned())
+            .drop_table(Table::drop().table(TelemetryRust::Table).to_owned())
             .await
     }
 }
 
 #[derive(Iden)]
-enum Telemetry {
+enum TelemetryRust {
     Table,
     Id,
     RequestId,

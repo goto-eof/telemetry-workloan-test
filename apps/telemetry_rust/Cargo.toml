@@ -1,5 +1,5 @@
 [package]
-name = "oh_telemetry_collector_server_rust"
+name = "telemetry_rust"
 version = "0.1.0"
 edition = "2021"
 

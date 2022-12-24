@@ -15,7 +15,7 @@ FROM gcr.io/distroless/java:${JDK_VERSION}
 
 USER nonroot:nonroot
 
-COPY --from=MAVEN_TOOL_CHAIN_CACHE --chown=nonroot:nonroot /tmp/target/oh-telemetry-collector-server.jar /oh-telemetry-collector-server.jar
+COPY --from=MAVEN_TOOL_CHAIN_CACHE --chown=nonroot:nonroot /tmp/target/telemetry_java.jar /telemetry_java.jar
 
 EXPOSE 8015
 
@@ -26,4 +26,4 @@ ENV _JAVA_OPTIONS "-XX:MinRAMPercentage=60.0 -XX:MaxRAMPercentage=90.0 \
 -Dspring.profiles.active=default" \
 "-Dspring.config.location=classpath:production.properties"
 
-ENTRYPOINT ["java", "-jar", "/oh-telemetry-collector-server.jar"]
+ENTRYPOINT ["java", "-jar", "/telemetry_java.jar"]

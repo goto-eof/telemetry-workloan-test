@@ -6,11 +6,6 @@ use std::env;
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
 pub struct Settings {
-    pub db_uri: String,
-    pub db_username: String,
-    pub db_password: String,
-    pub db_name: String,
-    pub db_port: u16,
     pub server_port: u16,
     pub cors_allowed_origins: Vec<String>,
     pub cors_allowed_headers: Vec<String>,

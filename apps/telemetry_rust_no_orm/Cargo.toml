@@ -1,5 +1,5 @@
 [package]
-name = "oh_telemetry_collector_server_rust"
+name = "telemetry_rust_no_orm"
 version = "0.1.0"
 edition = "2021"
 authors=["Andrei Dodu"]
@@ -17,3 +17,4 @@ lazy_static="1.4.0"
 async_once="0.2.6"
 config = "0.13.2"
 sqlx = { version = "0.6.2", features = [ "runtime-tokio-native-tls" , "postgres" , "chrono"] }
+dotenv = "0.15.0"

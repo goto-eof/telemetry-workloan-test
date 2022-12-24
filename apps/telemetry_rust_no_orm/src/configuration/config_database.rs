@@ -5,14 +5,7 @@ use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 pub async fn establish_connection() -> Result<Pool<Postgres>, sqlx::Error> {
     let pool = PgPoolOptions::new()
         .max_connections(50)
-        .connect(&format!(
-            "postgres://{}:{}@{}:{}/{}",
-            SETTINGS.db_username.as_str(),
-            SETTINGS.db_password.as_str(),
-            SETTINGS.db_uri.as_str(),
-            SETTINGS.db_port,
-            SETTINGS.db_name.as_str()
-        ))
+        .connect(&dotenv::var("DATABASE_URL").unwrap())
         .await?;
 
     return Ok(pool);

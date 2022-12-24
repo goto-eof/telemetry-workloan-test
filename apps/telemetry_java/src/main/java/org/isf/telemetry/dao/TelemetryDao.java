@@ -12,16 +12,16 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TelemetryDao extends JpaRepository<TelemetryBo, Long> {
 
-	@Query(value = "SELECT max(u.requestId) FROM telemetry u")
+	@Query(value = "SELECT max(u.requestId) FROM telemetry_java u")
 	Integer retrieveNextRequestId();
 
 	@Query("select new org.isf.telemetry.bean.KeyValue(count(t1.value) as key, t1.value as value) "
 					+ ""
-					+ "from telemetry t1 "
+					+ "from telemetry_java t1 "
 					+ "where t1.key = :keyMemory"
 					+ "		 and t1.requestId in ("
 					+ "							select max(t2.requestId)"
-					+ "							from   telemetry t2"
+					+ "							from   telemetry_java t2"
 					+ "							where  t2.key = :keyHwId"
 					+ "							group by t2.key, t2.value"
 					+ "							) "

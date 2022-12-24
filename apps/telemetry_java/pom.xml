@@ -8,9 +8,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 	<groupId>org.isf</groupId>
-	<artifactId>oh_telemetry_collector_server</artifactId>
+	<artifactId>telemetry_java</artifactId>
 	<version>0.0.1</version>
-	<name>oh-telemetry-collector-server</name>
+	<name>telemetry_java</name>
 	<description>Telemetry server</description>
 	<packaging>jar</packaging>
 	<properties>
@@ -42,7 +42,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>oh-telemetry-collector-server</finalName>
+		<finalName>telemetry_java</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -10,6 +10,6 @@ FROM gcr.io/distroless/cc
 COPY default.json /
 COPY production.json /
 COPY log4rs.yml /
-COPY --from=builder /app/target/release/oh_telemetry_collector_server_rust /
+COPY --from=builder /app/target/release/telemetry_rust /
 ENV DEV_BOARD_ENV production
-CMD ["./oh_telemetry_collector_server_rust"]
+CMD ["./telemetry_rust"]

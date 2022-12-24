@@ -15,6 +15,7 @@ COPY --from=ts-compiler /usr/app/.env ./
 RUN npm install --only=production
 
 FROM gcr.io/distroless/nodejs:18
+
 WORKDIR /usr/app
 COPY --from=ts-remover /usr/app ./
 USER 1000

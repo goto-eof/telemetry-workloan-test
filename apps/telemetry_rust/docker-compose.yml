@@ -1,10 +1,17 @@
-version: '3.6'
+version: '3'
 
 services:
-  telemetry-collector-server:
+  telemetry_rust_collector_service:
     container_name: telemetry_rust
     build:
       context: .
       dockerfile: Dockerfile
     restart: on-failure
-    network_mode: 'host'
+    ports:
+      - 8017:8017
+    networks:
+      - orione_network
+
+networks:
+  orione_network:
+    external: true

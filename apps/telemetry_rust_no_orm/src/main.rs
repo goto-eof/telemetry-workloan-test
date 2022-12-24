@@ -13,8 +13,11 @@ mod controller;
 mod dao;
 mod route;
 
+use dotenv;
+
 #[macro_use]
 extern crate lazy_static;
+
 
 lazy_static! {
     static ref SETTINGS: Settings = Settings::init_configuration().unwrap();
@@ -26,11 +29,12 @@ lazy_static! {
 
 #[tokio::main]
 async fn main() {
+    dotenv::dotenv().ok();
     println!("initializing logging...");
-    log4rs::init_file("./log4rs.yml", Default::default()).unwrap();
-
+    // log4rs::init_file("./log4rs.yml", Default::default()).unwrap();
+    let pool = DB_POOL.get().await;
     check_connection().await;
-
+    sqlx::migrate!().run(pool).await.unwrap();
     println!("================================");
     println!("server started on port [{}] :)", SETTINGS.server_port);
     println!("================================");

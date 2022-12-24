@@ -7,4 +7,11 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: on-failure
-    network_mode: 'host'
+    ports:
+      - 8019:8019
+    networks:
+      - orione_network
+
+networks:
+  orione_network:
+    external: true

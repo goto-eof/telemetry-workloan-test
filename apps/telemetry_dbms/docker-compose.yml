@@ -1,16 +1,21 @@
-version: '3.6'
+version: '3'
 
 services:
-  postgres-service:
-    container_name: telemetry_postgres_service
+  orionedbmsservice:
+    container_name: telemetry_postgres_container
     image: postgres:15.1
-    ports:
-      - '5555:5555'
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
     restart: always
-    networks:
-      - default
     command: -p 5555
+    ports:
+      - 5555:5555
+    networks:
+      - orione_network
+
+networks:
+  orione_network:
+    name: orione_network
+

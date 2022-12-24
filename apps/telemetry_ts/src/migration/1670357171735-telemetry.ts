@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-const table = 'telemetry';
+const table = 'telemetry_ts';
 
 export class migration1670357171735 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
