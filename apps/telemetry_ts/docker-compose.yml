@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  telemetry-collector-server:
+    container_name: telemetry_ts
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    network_mode: 'host'

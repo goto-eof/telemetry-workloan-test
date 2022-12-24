@@ -1,0 +1,16 @@
+version: '3.6'
+
+services:
+  postgres-service:
+    container_name: telemetry_postgres_service
+    image: postgres:15.1
+    ports:
+      - '5555:5555'
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    restart: always
+    networks:
+      - default
+    command: -p 5555

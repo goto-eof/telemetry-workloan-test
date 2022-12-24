@@ -1,0 +1,18 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "dbms": {
+      "outputs": [],
+      "cache": false
+    },
+    "containers": {
+      "dependsOn": ["^containers"],
+      "outputs": [],
+      "cache": false
+    },
+    "workloan:test": {
+      "dependsOn": ["containers"],
+      "outputs": []
+    }
+  }
+}

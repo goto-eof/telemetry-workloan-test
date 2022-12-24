@@ -1,0 +1,12 @@
+{
+  "name": "telemetry_dbms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dbms": "docker-compose up -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

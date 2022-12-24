@@ -1,0 +1,12 @@
+{
+  "name": "telemetry_rust",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "containers": "docker-compose up -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

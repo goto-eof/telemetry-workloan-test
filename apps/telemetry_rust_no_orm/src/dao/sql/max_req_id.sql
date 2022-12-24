@@ -1,0 +1,1 @@
+select max(request_id) as maximum from telemetry_no_orm;
