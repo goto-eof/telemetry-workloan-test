@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dbms": "turbo run dbms",
-    "containers": "turbo run dbms && turbo run containers --parallel && turbo run workloan:test",
+    "test": "turbo run dbms && turbo run containers --parallel && turbo run workloan:test",
     "workloan:test": "turbo run test"
   },
   "devDependencies": {

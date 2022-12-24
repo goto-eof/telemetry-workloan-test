@@ -6,12 +6,12 @@
       "cache": false
     },
     "containers": {
-      "dependsOn": ["^containers"],
+      "dependsOn": [],
       "outputs": [],
       "cache": false
     },
-    "workloan:test": {
-      "dependsOn": ["containers"],
+    "test": {
+      "dependsOn": [],
       "outputs": []
     }
   }
