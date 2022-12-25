@@ -1,4 +1,4 @@
-CREATE TABLE public.telemetry_no_orm (
+CREATE TABLE public.telemetry_rust_no_orm (
         id serial4 NOT NULL,
         request_id int4 NOT NULL,
         code varchar NOT NULL,

@@ -14,7 +14,7 @@ pub async fn store_data_db(data: HashMap<String, HashMap<String, Option<String>>
     let tx = pool.begin().await;
     let mut tx = tx.unwrap();
 
-    let result = sqlx::query_as("select max(request_id) from telemetry_no_orm")
+    let result = sqlx::query_as("select max(request_id) from telemetry_rust_no_orm")
         .fetch_one(&mut tx)
         .await;
 
@@ -29,7 +29,7 @@ pub async fn store_data_db(data: HashMap<String, HashMap<String, Option<String>>
     for (code, key_value_map) in data.into_iter() {
         for (key, value) in key_value_map.into_iter() {
             let result = sqlx::query(
-                "INSERT INTO telemetry_no_orm (request_id, code, property, value, created_at) VALUES($1, $2, $3, $4, $5)"
+                "INSERT INTO telemetry_rust_no_orm (request_id, code, property, value, created_at) VALUES($1, $2, $3, $4, $5)"
                             ).bind(req_id).bind(
                                 &code).bind(
                                 key).bind(
@@ -55,29 +55,29 @@ pub async fn telemetry_retrieve_num_comp_ram() -> Result<Vec<MultipleKeyValue>, 
 
     let result= sqlx::query_as(
         "       SELECT
-        telemetry_no_orm.value,
-        COUNT(telemetry_no_orm.value) AS n_pcs
+        telemetry_rust_no_orm.value,
+        COUNT(telemetry_rust_no_orm.value) AS n_pcs
         FROM
-        telemetry_no_orm
+        telemetry_rust_no_orm
         WHERE
-        telemetry_no_orm.property = $1
-        AND telemetry_no_orm.request_id IN (
+        telemetry_rust_no_orm.property = $1
+        AND telemetry_rust_no_orm.request_id IN (
             SELECT
-            MAX(telemetry_no_orm.request_id)
+            MAX(telemetry_rust_no_orm.request_id)
             FROM
-            telemetry_no_orm
+            telemetry_rust_no_orm
             WHERE
-            telemetry_no_orm.property = $2
+            telemetry_rust_no_orm.property = $2
             GROUP BY
             property,
             value
         )
         GROUP BY
-        telemetry_no_orm.code,
-        telemetry_no_orm.property,
-        telemetry_no_orm.value
+        telemetry_rust_no_orm.code,
+        telemetry_rust_no_orm.property,
+        telemetry_rust_no_orm.value
         ORDER BY
-        telemetry_no_orm.property ASC"
+        telemetry_rust_no_orm.property ASC"
     ).bind("hw_mem_total_memory")
      .bind("hw_cpu_idientifier")
     .fetch_all(pool)
@@ -102,6 +102,6 @@ let result: Vec<(String, i64)> = result.unwrap();
 
 pub async fn delete_all_dao() -> bool {
     let pool = DB_POOL.get().await;
-    let result = sqlx::query("delete from telemetry_no_orm").execute(pool).await;
+    let result = sqlx::query("delete from telemetry_rust_no_orm").execute(pool).await;
     return true;
 }
