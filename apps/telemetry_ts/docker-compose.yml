@@ -1,7 +1,7 @@
 version: '3.6'
 
 services:
-  telemetry-collector-server:
+  telemetry_ts_collector_server:
     container_name: telemetry_ts
     build:
       context: .

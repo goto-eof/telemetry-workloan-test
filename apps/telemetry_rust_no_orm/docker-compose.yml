@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  telemetrycollectorservice:
+  telemetry_rust_no_orm_collector_service:
     container_name: telemetry_rust_no_orm_container
     build:
       context: .
