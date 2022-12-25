@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "containers": "docker-compose up -d"
+    "containers": "docker-compose up --build -d"
   },
   "keywords": [],
   "author": "",

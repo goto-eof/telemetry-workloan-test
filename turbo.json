@@ -6,16 +6,10 @@
       "outputs": [],
       "cache": false
     },
-    "rust_no_orm": {
-      "cache": false
-    },
     "test":{
       "cache": false
     },
-    "rust_vs_rust": {
-      "cache": false
-    },
-    "rust_no_orm:write": {
+    "dbms": {
       "cache": false
     }
   }

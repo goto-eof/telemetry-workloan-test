@@ -7,18 +7,21 @@
     "packages/*"
   ],
   "scripts": {
-    "run:test": "turbo run dbms && turbo run containers --parallel && turbo run test",
-    "run:rust:vs:rust": "turbo run rust_no_orm:write",
-    "rust_no_orm": "turbo run test"
+    "dbms":"turbo run dbms",
+    "container:rust":"turbo run containers --filter=telemetry_rust",
+    "container:java":"turbo run containers --filter=telemetry_java",
+    "container:ts":"turbo run containers --filter=telemetry_ts",
+    "container:rust_no_orm":"turbo run containers --filter=telemetry_rust_no_orm",
+    "containers": "turbo run containers --parallel",
+    "run:test": "turbo run dbms && turbo run containers --parallel && turbo run test"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "^1.6.3"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.19.0"
 }

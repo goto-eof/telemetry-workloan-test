@@ -12,7 +12,7 @@
     "generate:model": "npx typeorm-model-generator -h localhost -u postgres -x postgres -d postgres -p 5439 -e postgres",
     "generate": "typeorm migration:generate -n PostRefactoring",
     "revert": "npx typeorm-ts-node-commonjs migration:revert -d  src/migration.config.ts",
-    "containers": "docker-compose up -d"
+    "containers": "docker-compose up --build -d"
   },
   "author": "Andrei Dodu",
   "license": "ISC",
