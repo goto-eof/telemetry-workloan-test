@@ -1,11 +1,13 @@
-use crate::{DB_POOL, SETTINGS};
+use crate::{DB_POOL};
 use log::debug;
 use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 
 pub async fn establish_connection() -> Result<Pool<Postgres>, sqlx::Error> {
+    let db_url = &dotenv::var("DATABASE_URL").unwrap();
+    println!("{:?}", db_url);
     let pool = PgPoolOptions::new()
         .max_connections(50)
-        .connect(&dotenv::var("DATABASE_URL").unwrap())
+        .connect(db_url)
         .await?;
 
     return Ok(pool);
