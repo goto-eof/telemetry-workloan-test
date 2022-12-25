@@ -12,8 +12,6 @@ logs/
 .vscode/
 .DS_Store
 dist
-reports-html/
-reports-json/
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
