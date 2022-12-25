@@ -44,7 +44,7 @@ All 4 applications that are tested are installed in 4 different docker container
 ### Tests results
 Tests results  are under the directory `apps/telemetry_test/reports-html`. 
 
-### Meaning of teasts by directory
+### Meaning of tests by directory
  - `kread` - constant number of v-users that makes requests that executes a select. Aim: determinate percentile value. 
  - `kwrite` - constant number of v-users that makes requests that executes an insert. Aim: determinate percentile value.
  - `kwriteread` - constant number of v-users that makes requests that executes an insert and a select. Aim: determinate percentile value.
