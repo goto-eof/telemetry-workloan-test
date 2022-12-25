@@ -11,6 +11,9 @@
     },
     "dbms": {
       "cache": false
+    },
+    "rust_vs_rust_no_orm": {
+      "cache": false
     }
   }
 }

@@ -13,7 +13,8 @@
     "container:ts":"turbo run containers --filter=telemetry_ts",
     "container:rust_no_orm":"turbo run containers --filter=telemetry_rust_no_orm",
     "containers": "turbo run containers --parallel",
-    "run:test": "turbo run dbms && turbo run containers --parallel && turbo run test"
+    "rust_vs_rust_no_orm":"turbo run rust_vs_rust_no_orm",
+    "test": "turbo run dbms && turbo run containers --parallel && turbo run test"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

@@ -7,7 +7,7 @@
     "rust_vs_rust": "pnpm run rust_no_orm && pnpm run rust",
     "test": "pnpm run all",
     "all": "pnpm run del:rep && pnpm run vall && pnpm run kall",
-    "vall": "pnpm run rust && pnpm run rust_no_orm && pnpm run java && pnpm run js",
+    "vall": "pnpm run java && pnpm run js && pnpm run rust && pnpm run rust_no_orm",
     "kall": "pnpm run krust && pnpm run krust_no_orm && pnpm run kjava && pnpm run kjs && pnpm run kwriteread",
     "delete": "pnpm run js:delete && pnpm run rust_no_orm:delete && pnpm run java:delete && pnpm run rust:delete",
     "rust": "pnpm run rust:delete && pnpm run rust:write && pnpm run rust:read && pnpm run rust:delete && pnpm run rust:read:write",
