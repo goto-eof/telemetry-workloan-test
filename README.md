@@ -29,8 +29,8 @@ All 4 applications that are tested are installed in 4 different docker container
 ### Development stack
  - Java application: Java, Spring Boot, Hibernate, Postgres
  - TS pplication: Typescript, Express, TypeORM, Postgres
- - Rust: Rust, Warp, Sea-ORM, Postgres
- - Rust (no ORM): Rust, Warp, SQLX, Postgres
+ - Rust application: Rust, Warp, Sea-ORM, Postgres
+ - Rust (no ORM) application: Rust, Warp, SQLX, Postgres
 
 ### Install pnpm
 ```curl -fsSL https://get.pnpm.io/install.sh | sh -```
