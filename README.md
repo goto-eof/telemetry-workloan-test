@@ -54,9 +54,9 @@ Tests results  are under the directory `apps/telemetry_test/reports-html`.
 
 ### Opinion on tests
 Taking into account the various tests I have done, Rust applications seems that has a better results (rust allows to have a bigger workloan), at the second place we have the Java application and finally the TypeScript application. Rust ORM accepts less requests than Rust NO ORM.
-Furthermore the memory usage of rust applciations is lower thant the others (1.5Mb vs about 1Gb of java application). 
+Furthermore the memory usage of rust applciations is lower thant the others (1.5Mb vs about 1Gb of java application, see the `docker stats` result). 
 So that, Rust rocks!
-![stats](stats.png)
+![docker stats](stats.png)
 
 ### Moreover
  - the select involves the execution of a query with a subquery and a group by statement.
