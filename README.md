@@ -18,7 +18,7 @@
                                                                                         
 ```
 ## Telemetry workloan test
-Telemetry workloan test was developed for testing the applications workloan in order to allow to make a comparison between different technologies. Currently there are 4 projects on witch tests are made: Java, Rust, Rust (no ORM) and TypeScript. This project was made using turbo repo and pnpm.
+Telemetry workloan test was developed for testing the applications workloan in order to allow to make a comparison between different technologies. Currently there are 4 projects on which tests are made: Java, Rust, Rust (no ORM) and TypeScript. This project was made using turbo repo and pnpm.
 
 ### Architecture
 All 4 applications that are tested are installed in 4 different docker containers. Every application connects to the fifth container that contains the DBMS (Postgres).
