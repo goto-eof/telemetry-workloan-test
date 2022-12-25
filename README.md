@@ -35,6 +35,3 @@ All 4 applications that are tested are installed in 4 different docker container
 
 ### run test
 ```pnpm run test```
-
-
-p.s. docker is required
