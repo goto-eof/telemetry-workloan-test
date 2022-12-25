@@ -2,7 +2,7 @@ version: '3'
 
 services:
   telemetry_rust_no_orm_collector_service:
-    container_name: telemetry_rust_no_orm_container
+    container_name: telemetry_rust_no_orm
     build:
       context: .
       dockerfile: Dockerfile
