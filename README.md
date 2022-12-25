@@ -23,6 +23,7 @@ Telemetry workloan test was developed for testing the applications workloan in o
 
 ### Architecture
 All 4 applications that are tested are installed in 4 different docker containers. Every application connects to the fifth container that contains the DBMS.
+
 ![architecture](telemetry_workloan_test.png)
 
 
