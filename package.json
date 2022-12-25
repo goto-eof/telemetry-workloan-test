@@ -1,5 +1,5 @@
 {
-  "name": "telemetry",
+  "name": "telemetry_workloan_test",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -7,13 +7,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dbms":"turbo run dbms",
-    "container:rust":"turbo run containers --filter=telemetry_rust",
-    "container:java":"turbo run containers --filter=telemetry_java",
-    "container:ts":"turbo run containers --filter=telemetry_ts",
-    "container:rust_no_orm":"turbo run containers --filter=telemetry_rust_no_orm",
-    "containers": "turbo run containers --parallel",
-    "rust_vs_rust_no_orm":"turbo run rust_vs_rust_no_orm",
+    "dbms": "turbo run dbms",
+    "container:rust": "turbo run containers --filter=telemetry_rust",
+    "container:java": "turbo run containers --filter=telemetry_java",
+    "container:ts": "turbo run containers --filter=telemetry_ts",
+    "container:rust_no_orm": "turbo run containers --filter=telemetry_rust_no_orm",
+    "containers": "turbo run dbms && turbo run containers --parallel",
+    "rust_vs_rust_no_orm": "turbo run rust_vs_rust_no_orm",
     "test": "turbo run dbms && turbo run containers --parallel && turbo run test"
   },
   "devDependencies": {
