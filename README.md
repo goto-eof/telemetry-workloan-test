@@ -52,7 +52,7 @@ Tests results  are under the directory `apps/telemetry_test/reports-html`.
  - `write` - variable number of v-users that makes reqeusts that execute an insert. Aim: determinate the workloan.
  - `writeread` - variable number of v-users that makes reqeusts that execute am insert and a select. Aim: determinate the workloan.
 
-### Tests opinion
+### Opinion on tests
 Rust applications seams that has a better results (rust allows to have a bigger workloan), at the second place we have the Java application and finally the TS application.
 Furthermore the memory usage of rust applciations is lower thant the others (1.5Mb vs abouat 1Gb of java application).
 
