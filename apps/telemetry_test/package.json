@@ -1,10 +1,10 @@
 {
-  "name": "oh_telemetry_collector_load_testing",
+  "name": "telemetry_workloan_test",
   "version": "1.0.0",
   "description": "loan test for OH Telemetry Collector Server",
   "main": "index.js",
   "scripts": {
-    "rust:vs:rust": "pnpm run rust && pnpm run rust_no_orm",
+    "rust_vs_rust": "pnpm run rust_no_orm && pnpm run rust",
     "test": "pnpm run all",
     "all": "pnpm run del:rep && pnpm run vall && pnpm run kall",
     "vall": "pnpm run rust && pnpm run rust_no_orm && pnpm run java && pnpm run js",

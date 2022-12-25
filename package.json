@@ -7,9 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dbms": "turbo run dbms",
-    "test": "turbo run dbms && turbo run containers --parallel && turbo run test",
-    "rust:vs:rust": "turbo run rust:vs:rust"
+    "run:test": "turbo run dbms && turbo run containers --parallel && turbo run test",
+    "run:rust:vs:rust": "turbo run rust_no_orm:write",
+    "rust_no_orm": "turbo run test"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

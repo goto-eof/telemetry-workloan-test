@@ -1,19 +1,22 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "dbms": {
-      "outputs": [],
-      "cache": false
-    },
     "containers": {
       "dependsOn": [],
       "outputs": [],
       "cache": false
     },
-    "test": {
-      "dependsOn": [],
-      "outputs": []
+    "rust_no_orm": {
+      "cache": false
     },
-    "rust:vs:rust": {}
+    "test":{
+      "cache": false
+    },
+    "rust_vs_rust": {
+      "cache": false
+    },
+    "rust_no_orm:write": {
+      "cache": false
+    }
   }
 }
