@@ -1,3 +1,3 @@
 {
-    "db_uri" : "postgres://postgres:postgres@postgres_service_rust:5437/postgres"
+  "db_uri": "postgres://postgres:postgres@orionedbmsservice:5555/postgres"
 }
