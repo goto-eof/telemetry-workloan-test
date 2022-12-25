@@ -41,5 +41,17 @@ All 4 applications that are tested are installed in 4 different docker container
 ### Run test
 ```pnpm run test```
 
-### Tests results are under the directory 
-`apps/telemetry_test/reports-html`
+### Tests results
+Tests results  are under the directory `apps/telemetry_test/reports-html`. 
+
+### Meaning of teasts by directory
+ - `kread` - constant number of v-users that makes requests that executes a select. Aim: determinate percentile value. 
+ - `kwrite` - constant number of v-users that makes requests that executes an insert. Aim: determinate percentile value.
+ - `kwriteread` - constant number of v-users that makes requests that executes an insert and a select. Aim: determinate percentile value.
+ - `read` - variable number of v-users that makes reqeusts that execute a select. Aim: determinate the workloan.
+ - `write` - variable number of v-users that makes reqeusts that execute an insert. Aim: determinate the workloan.
+ - `writeread` - variable number of v-users that makes reqeusts that execute am insert and a select. Aim: determinate the workloan.
+
+
+### Moreover
+ - the select involves the execution of a query with a subquery and a grup by statement.
