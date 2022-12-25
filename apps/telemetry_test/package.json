@@ -4,21 +4,19 @@
   "description": "loan test for OH Telemetry Collector Server",
   "main": "index.js",
   "scripts": {
+    "rust:vs:rust": "pnpm run rust && pnpm run rust_no_orm",
     "test": "pnpm run all",
     "all": "pnpm run del:rep && pnpm run vall && pnpm run kall",
-    "vall": "pnpm run rust && pnpm run java && pnpm run js",
-    "kall": "pnpm run krust && pnpm run kjava && pnpm run kjs && pnpm run kwriteread",
-    
-    "delete": "pnpm run js:delete && pnpm run java:delete && pnpm run rust:delete",
-
+    "vall": "pnpm run rust && pnpm run rust_no_orm && pnpm run java && pnpm run js",
+    "kall": "pnpm run krust && pnpm run krust_no_orm && pnpm run kjava && pnpm run kjs && pnpm run kwriteread",
+    "delete": "pnpm run js:delete && pnpm run rust_no_orm:delete && pnpm run java:delete && pnpm run rust:delete",
     "rust": "pnpm run rust:delete && pnpm run rust:write && pnpm run rust:read && pnpm run rust:delete && pnpm run rust:read:write",
     "java": "pnpm run java:delete && pnpm run java:write && pnpm run java:read && pnpm run java:delete && pnpm run java:read:write",
     "js": "pnpm run js:delete && pnpm run js:write && pnpm run js:read && pnpm run js:delete && pnpm run js:read:write",
-    
     "krust": "pnpm run rust:delete && pnpm run rust:kwrite && pnpm run rust:kread",
     "kjava": "pnpm run java:delete && pnpm run java:kwrite && pnpm run java:kread",
     "kjs": "pnpm run js:delete && pnpm run js:kwrite && pnpm run js:kread",
-    "kwriteread": "pnpm run js:delete && pnpm run js:k:write:read && pnpm run java:delete && pnpm run java:k:write:read && pnpm run rust:delete && pnpm run rust:k:write:read",
+    "kwriteread": "pnpm run js:delete && pnpm run js:k:write:read && pnpm run java:delete && pnpm run java:k:write:read && pnpm run rust:delete && pnpm run rust:k:write:read && pnpm run rust_no_orm:delete && pnpm run rust_no_orm:k:write:read",
     "rust:read:write": "artillery run  --output reports-json/report_rust.json  configuration/rust/load_test_rust.yml && artillery report --output reports-html/writeread/report_rust.html reports-json/report_rust.json",
     "rust:k:write:read": "artillery run  --output reports-json/report_rust_k_writeread.json  configuration/rust/load_test_rust_k_writeread.yml && artillery report --output reports-html/kwriteread/report_rust_k_writeread.html reports-json/report_rust_k_writeread.json",
     "rust:write": "artillery run  --output reports-json/report_rust_write.json  configuration/rust/load_test_rust_write.yml && artillery report --output reports-html/write/report_rust_write.html reports-json/report_rust_write.json",
@@ -48,8 +46,6 @@
     "js:delete": "artillery run configuration/js/load_test_js_delete.yml",
     "rust:delete": "artillery run configuration/rust/load_test_rust_delete.yml",
     "java:delete": "artillery run configuration/java/load_test_java_delete.yml",
-
-
     "rust_no_orm:delete": "artillery run configuration/rust_no_orm/load_test_rust_no_orm_delete.yml",
     "rust_no_orm": "pnpm run rust_no_orm:delete && pnpm run rust_no_orm:write && pnpm run rust_no_orm:read && pnpm run rust_no_orm:delete && pnpm run rust_no_orm:read:write",
     "krust_no_orm": "pnpm run rust_no_orm:delete && pnpm run rust_no_orm:kwrite && pnpm run rust_no_orm:kread",
@@ -59,10 +55,6 @@
     "rust_no_orm:read": "artillery run  --output reports-json/report_rust_no_orm_read.json  configuration/rust_no_orm/load_test_rust_no_orm_read.yml && artillery report --output reports-html/read/report_rust_no_orm_read.html reports-json/report_rust_no_orm_read.json",
     "rust_no_orm:kwrite": "artillery run  --output reports-json/report_rust_no_orm_k_write.json  configuration/rust_no_orm/load_test_rust_no_orm_k_write.yml && artillery report --output reports-html/kwrite/report_rust_no_orm_k_write.html reports-json/report_rust_no_orm_k_write.json",
     "rust_no_orm:kread": "artillery run  --output reports-json/report_rust_no_orm_k_read.json  configuration/rust_no_orm/load_test_rust_no_orm_k_read.yml && artillery report --output reports-html/kread/report_rust_no_orm_k_read.html reports-json/report_rust_no_orm_k_read.json"
-
-
-
-    
   },
   "author": "Andrei Dodu",
   "license": "ISC",
