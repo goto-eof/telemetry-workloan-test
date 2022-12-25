@@ -54,4 +54,4 @@ Tests results  are under the directory `apps/telemetry_test/reports-html`.
 
 
 ### Moreover
- - the select involves the execution of a query with a subquery and a grup by statement.
+ - the select involves the execution of a query with a subquery and a group by statement.
