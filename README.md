@@ -17,21 +17,22 @@ __      _____  _ __| | _| | ___   __ _ _ __
  / / |  __/\__ \ |_                              
  \/   \___||___/\__|                             
                                                                                         
-```                                                     
-                                        
-
-
+```
 ## Telemetry workloan test
-Telemetry workloan test was developed for testing the applications workload. So that we can make a comparison between the applications in Java, Rust, Rust (no ORM) and TypeScript. 
+Telemetry workloan test was developed for testing the applications workloan in order to allow to make a comparison between different technologies. Currently there are 4 projects on witch tests are made: Java, Rust, Rust (no ORM) and TypeScript. This project was made using turbo repo and pnpm.
+
+All 4 applications that are tested are installed in 4 different docker containers. Every application connects to the fifth container that contains the DBMS.
+![architecture](telemetry_workloan_test.png)
+
 
 ### install pnpm
-`curl -fsSL https://get.pnpm.io/install.sh | sh -`
+```curl -fsSL https://get.pnpm.io/install.sh | sh -```
 
 ### install packages
-`pnpm install`
+```pnpm install```
 
 ### run test
-`pnpm run test`
+```pnpm run test```
 
 
 p.s. docker is required
