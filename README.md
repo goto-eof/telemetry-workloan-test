@@ -33,13 +33,13 @@ All 4 applications that are tested are installed in 4 different docker container
  - Rust: Rust, Warp, Sea-ORM, Postgres
  - Rust (no ORM): Rust, Warp, SQLX, Postgres
 
-### install pnpm
+### Install pnpm
 ```curl -fsSL https://get.pnpm.io/install.sh | sh -```
 
-### install packages
+### Install packages
 ```pnpm install```
 
-### run test
+### Run test
 ```pnpm run test```
 
 ### Tests results are under the directory 
