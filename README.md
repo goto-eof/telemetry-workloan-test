@@ -53,8 +53,7 @@ Tests results  are under the directory `apps/telemetry_test/reports-html`.
  - `writeread` - variable number of v-users that makes reqeusts that execute am insert and a select. Aim: determinate the workloan.
 
 ### Opinion on tests
-Taking into account the various tests I have done, Rust applications seems that has better results (rust allows to have a bigger workloan), at the second place we have the Java application and finally the TypeScript application. Rust ORM accepts less requests than Rust NO ORM (yes, could be obvius).
-Furthermore the memory usage of rust applications is lower thant the others (1.5Mb vs about 1Gb of java application, see the `docker stats` result). 
+Taking into account the various tests I have done, Rust applications seems that has better results. Rust ORM accepts less requests than Rust NO ORM (yes, could be obvius). Furthermore the memory usage of rust applications is lower thant the others (1.5Mb vs about 1Gb of java application, see the `docker stats` result). 
 So that, Rust rocks!
 ![docker stats](stats.png)
 
