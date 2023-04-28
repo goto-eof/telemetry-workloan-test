@@ -59,3 +59,6 @@ So that, Rust rocks!
 
 ### Moreover
  - the select involves the execution of a query with a subquery and a group by statement.
+ 
+ 
+ For bug reporting please click [here](http://andre-i.eu/#contactme).
